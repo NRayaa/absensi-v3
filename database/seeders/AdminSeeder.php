@@ -20,13 +20,6 @@ class AdminSeeder extends Seeder
                 'role'=>"admin",
                 'password'=>bcrypt('rusmanyuli12'),
             ],
-            [
-                'name'=>"Anas",
-                'email'=>"anas@gmail.com",
-                'role'=>"guru",
-                'password'=>bcrypt('aisyah123'),
-            ],
-
         ];
 
         foreach ($admin as $key => $val) {
