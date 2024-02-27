@@ -1,0 +1,14 @@
+@media only screen and (max-width: 768px) {
+    .hidden-on-mobile {
+        display: none !important;
+    }
+    .text-small-on-mobile {
+        font-size: 11px !important; /* Ubah ukuran teks sesuai kebutuhan */
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .hidden-on-desktop {
+        display: none !important;
+    }
+}
