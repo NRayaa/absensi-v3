@@ -21,12 +21,12 @@ return new class extends Migration
                 $table->text('subject_p');
                 $table->text('topic_p');
                 $table->integer('student_p');
-                $table->integer('student_s_p');
-                $table->integer('student_i_p');
-                $table->integer('student_a_p');
-                $table->text('student_s_k_p');
-                $table->text('student_i_k_p');
-                $table->text('student_a_k_p');
+                $table->integer('student_s_p')->nullable();
+                $table->integer('student_i_p')->nullable();
+                $table->integer('student_a_p')->nullable();
+                $table->text('student_s_k_p')->nullable();
+                $table->text('student_i_k_p')->nullable();
+                $table->text('student_a_k_p')->nullable();
             $table->timestamps();
         });
     }

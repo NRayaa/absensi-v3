@@ -1,8 +1,9 @@
 @extends('layouts.layout')
 @section('crumb', 'Dashboard')
 @section('crumb1', 'Dashboard')
-@section('name', '{{ $name }}')
-@section('role', '{{ $role }}')
+@section('name', $name)
+@section('role', $role)
+
 
 @section('sidebar')
     <aside id="sidebar" class="sidebar">
@@ -36,6 +37,12 @@
                     <span>Mapel</span>
                 </a>
             </li><!-- End Mapel Nav -->
+            <li class="nav-item hidden-on-desktop">
+                <a class="nav-link collapsed" href="{{ route('logout') }}">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Logout</span>
+                </a>
+            </li><!-- End Logout Nav -->
 
         </ul>
 

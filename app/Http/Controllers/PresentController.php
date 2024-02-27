@@ -51,12 +51,12 @@ class PresentController extends Controller
             'subject_p' => 'required',
             'topic_p' => 'required',
             'student_p' => 'required',
-            'student_s_p' => 'required',
-            'student_i_p' => 'required',
-            'student_a_p' => 'required',
-            'student_s_k_p' => 'required',
-            'student_i_k_p' => 'required',
-            'student_a_k_p' => 'required',
+            'student_s_p' => 'nullable',
+            'student_i_p' => 'nullable',
+            'student_a_p' => 'nullable',
+            'student_s_k_p' => 'nullable',
+            'student_i_k_p' => 'nullable',
+            'student_a_k_p' => 'nullable',
         ]);
 
         Present::create([
@@ -115,12 +115,12 @@ class PresentController extends Controller
             'subject_p' => 'required',
             'topic_p' => 'required',
             'student_p' => 'required',
-            'student_s_p' => 'required',
-            'student_i_p' => 'required',
-            'student_a_p' => 'required',
-            'student_s_k_p' => 'required',
-            'student_i_k_p' => 'required',
-            'student_a_k_p' => 'required',
+            'student_s_p' => 'nullable',
+            'student_i_p' => 'nullable',
+            'student_a_p' => 'nullable',
+            'student_s_k_p' => 'nullable',
+            'student_i_k_p' => 'nullable',
+            'student_a_k_p' => 'nullable',
         ]);
 
         $updatePresent = Present::find($id);

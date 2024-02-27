@@ -18,11 +18,9 @@ class PresteacherController extends Controller
         $name = Auth::user()->name;
         $role = Auth::user()->role;
         $presentTeacher = Present::where('teacher_p', $name)
-        ->orderBy('created_at', 'desc')
-        ->get();
+            ->orderBy('created_at', 'desc')
+            ->get();
         return view('presteacher.index', compact('presentTeacher', 'name', 'role'));
-
-
     }
 
     /**
@@ -44,19 +42,19 @@ class PresteacherController extends Controller
     {
         $this->validate($request, [
             // 'teacher_p'=>'required',
-            'attend_p'=>'required',
-            'class_p'=>'required',
-            'meet_p'=>'required',
-            'date_p'=>'required',
-            'subject_p'=>'required',
-            'topic_p'=>'required',
-            'student_p'=>'required',
-            'student_s_p' => 'required',
-            'student_i_p' => 'required',
-            'student_a_p' => 'required',
-            'student_s_k_p' => 'required',
-            'student_i_k_p' => 'required',
-            'student_a_k_p' => 'required',
+            'attend_p' => 'required',
+            'class_p' => 'required',
+            'meet_p' => 'required',
+            'date_p' => 'required',
+            'subject_p' => 'required',
+            'topic_p' => 'required',
+            'student_p' => 'required',
+            'student_s_p' => 'nullable',
+            'student_i_p' => 'nullable',
+            'student_a_p' => 'nullable',
+            'student_s_k_p' => 'nullable',
+            'student_i_k_p' => 'nullable',
+            'student_a_k_p' => 'nullable',
         ]);
 
         $name = Auth::user()->name;
@@ -112,14 +110,20 @@ class PresteacherController extends Controller
     public function update(Request $request, string $id)
     {
         $this->validate($request, [
-            'teacher_p'=>'required',
-            'attend_p'=>'required',
-            'class_p'=>'required',
-            'meet_p'=>'required',
-            'date_p'=>'required',
-            'subject_p'=>'required',
-            'topic_p'=>'required',
-            'student_p'=>'required',
+            'teacher_p' => 'required',
+            'attend_p' => 'required',
+            'class_p' => 'required',
+            'meet_p' => 'required',
+            'date_p' => 'required',
+            'subject_p' => 'required',
+            'topic_p' => 'required',
+            'student_p' => 'required',
+            'student_s_p' => 'nullable',
+            'student_i_p' => 'nullable',
+            'student_a_p' => 'nullable',
+            'student_s_k_p' => 'nullable',
+            'student_i_k_p' => 'nullable',
+            'student_a_k_p' => 'nullable',
         ]);
 
         $name = Auth::user()->name;
@@ -135,6 +139,12 @@ class PresteacherController extends Controller
             'subject_p' => $request->subject_p,
             'topic_p' => $request->topic_p,
             'student_p' => $request->student_p,
+            'student_s_p' => $request->student_s_p,
+            'student_i_p' => $request->student_i_p,
+            'student_a_p' => $request->student_a_p,
+            'student_s_k_p' => $request->student_s_k_p,
+            'student_i_k_p' => $request->student_i_k_p,
+            'student_a_k_p' => $request->student_a_k_p,
         ]);
 
         return redirect()->route('presteacher.index');

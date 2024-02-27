@@ -16,7 +16,7 @@ class AdminSeeder extends Seeder
         $admin = [
             [
                 'name'=>"Rusman As'ari",
-                'email'=>"rusmanasari@gmail.com",
+                'email'=>"rusmanasari75@gmail.com",
                 'role'=>"admin",
                 'password'=>bcrypt('rusmanyuli12'),
             ],
