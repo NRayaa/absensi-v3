@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,6 +22,13 @@ class AdminSeeder extends Seeder
                 'password'=>bcrypt('rusmanyuli12'),
             ],
         ];
+        $user = [
+            ['name_teacher' => "Rusman As'ari",]
+        ];
+
+        foreach ($user as $key => $val) {
+            Teacher::create($val);
+        }
 
         foreach ($admin as $key => $val) {
             User::create($val);

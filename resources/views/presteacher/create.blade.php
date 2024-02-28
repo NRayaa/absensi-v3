@@ -51,12 +51,20 @@
                     <label class="col-sm-2 col-form-label">Kelas : </label>
                     <div class="col-sm-10">
                         <select class="form-select" name="class_p" aria-label="Default select example">
-                            <option value="Kelas 10 A">Kelas 10 A</option>
-                            <option value="Kelas 10 B">Kelas 10 B</option>
-                            <option value="Kelas 11 A">Kelas 11 A</option>
-                            <option value="Kelas 11 B">Kelas 11 B</option>
-                            <option value="Kelas 12 A">Kelas 12 A</option>
-                            <option value="Kelas 12 B">Kelas 12 B</option>
+                            <option value="7 A">7 A</option>
+                            <option value="7 B">7 B</option>
+                            <option value="7 C">7 C</option>
+                            <option value="7 D">7 D</option>
+                            <option value="8 A">8 A</option>
+                            <option value="8 B">8 B</option>
+                            <option value="8 C">8 C</option>
+                            <option value="8 D">8 D</option>
+                            <option value="8 E">8 E</option>
+                            <option value="9 A">9 A</option>
+                            <option value="9 B">9 B</option>
+                            <option value="9 C">9 C</option>
+                            <option value="9 D">9 D</option>
+                            <option value="9 E">9 E</option>
                         </select>
                     </div>
                 </div>

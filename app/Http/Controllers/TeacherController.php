@@ -19,7 +19,9 @@ class TeacherController extends Controller
     {
         $name = Auth::user()->name;
         $role = Auth::user()->role;
-        $teachers = Teacher::orderBy('created_at', 'desc')->get();
+        $teachers = Teacher::where('id', '!=', 1)
+                    ->orderBy('created_at', 'desc')
+                    ->get();
         return view('teacher.index', compact('teachers', 'name', 'role'));
     }
 
@@ -86,9 +88,10 @@ class TeacherController extends Controller
     public function edit(string $id)
     {
         $teacherDetail = Teacher::find($id);
+        $userDetail = User::find($id);
         $name = Auth::user()->name;
         $role = Auth::user()->role;
-        return view('teacher.edit', compact('teacherDetail', 'name', 'role'));
+        return view('teacher.edit', compact('teacherDetail', 'userDetail', 'name', 'role'));
     }
 
     /**
@@ -97,12 +100,21 @@ class TeacherController extends Controller
     public function update(Request $request, string $id)
     {
         $this->validate($request, [
-            'name_teacher' => 'required'
+            'name_teacher' => 'required',
+            'email_teacher' => 'required',
+            'password_teacher' => 'required',
         ]);
 
         $updateTeacher = Teacher::find($id);
         $response = $updateTeacher->update([
             'name_teacher' => $request->name_teacher,
+        ]);
+
+        User::find($id)->update([
+            'name' => $request->name_teacher,
+            'email' => $request->email_teacher,
+            'password' => bcrypt($request->password_teacher),
+            'role' => 'guru',
         ]);
 
         if ($response) {
@@ -119,6 +131,7 @@ class TeacherController extends Controller
     {
         $deleteTeacher = Teacher::find($id);
         $response = $deleteTeacher->delete();
+        User::find($id)->delete();
 
         if ($response) {
             return redirect()->route('teacher.index')->with('success', 'Teacher deleted successfully');

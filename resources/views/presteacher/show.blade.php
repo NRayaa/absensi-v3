@@ -70,17 +70,17 @@
                         <td>{{$detailPresent->student_p}}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Jumlah Murid Sakit</th>
+                        <th scope="row">Sakit</th>
                         <td>{{$detailPresent->student_s_p}}</td>
                         <td>{{$detailPresent->student_s_k_p}}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Jumlah Murid Izin</th>
+                        <th scope="row">Izin</th>
                         <td>{{$detailPresent->student_i_p}}</td>
                         <td>{{$detailPresent->student_i_k_p}}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Jumlah Murid Bolos</th>
+                        <th scope="row">Bolos</th>
                         <td>{{$detailPresent->student_a_p}}</td>
                         <td>{{$detailPresent->student_a_k_p}}</td>
                     </tr>
