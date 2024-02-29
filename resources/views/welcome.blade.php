@@ -131,7 +131,7 @@
         <div class="card">
 
             <div class="card-body">
-                <h5 class="card-title">Berita Acara</h5>
+                <h5 class="card-title">Berita</h5>
 
                 <div class="activity">
 

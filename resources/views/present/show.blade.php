@@ -52,7 +52,19 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Detail Presensi</h5>
+            
+            <div class="row">
+                <div class="col-6">
+                    <h5 class="card-title">Detail Presensi</h5>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <form action="{{ route('present.destroy', $detailPresent->id) }}" method="post">
+                        @csrf
+                        @method('delete')
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-plus me-1"></i> Delete</button>
+                    </form>
+                </div>
+            </div>
 
             <!-- Default Table -->
             <table class="table">
@@ -86,21 +98,25 @@
                         <td colspan="2">{{$detailPresent->topic_p}}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Jumlah Murid</th>
+                        <th scope="row">Waktu Presensi</th>
+                        <td colspan="2">{{$detailPresent->created_at}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Siswa Hadir</th>
                         <td colspan="2">{{$detailPresent->student_p}}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Jumlah Murid Sakit</th>
+                        <th scope="row">Sakit</th>
                         <td>{{$detailPresent->student_s_p}}</td>
                         <td>{{$detailPresent->student_s_k_p}}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Jumlah Murid Izin</th>
+                        <th scope="row">Izin</th>
                         <td>{{$detailPresent->student_i_p}}</td>
                         <td>{{$detailPresent->student_i_k_p}}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Jumlah Murid Bolos</th>
+                        <th scope="row">Alfa</th>
                         <td>{{$detailPresent->student_a_p}}</td>
                         <td>{{$detailPresent->student_a_k_p}}</td>
                     </tr>

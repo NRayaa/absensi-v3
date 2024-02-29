@@ -5,6 +5,15 @@
     .text-small-on-mobile {
         font-size: 11px !important; /* Ubah ukuran teks sesuai kebutuhan */
     }
+
+    .form-outline {
+        width: 70%; /* Atur lebar form sesuai kebutuhan */
+      }
+
+      .btn {
+        font-size: 14px; /* Ukuran font tombol */
+        padding: 8px 12px; /* Padding tombol */
+      }
 }
 
 @media only screen and (min-width: 769px) {

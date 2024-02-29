@@ -150,6 +150,7 @@ class PresentController extends Controller
     {
         $deletePresent = Present::find($id);
         $deletePresent->delete();
+        return redirect()->route('present.index');
     }
 
     function exportpresent()

@@ -31,11 +31,20 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Detail Presensi</h5>
-
-            <div class="col-6 d-flex justify-content-end align-items-center">
-                <a href="{{ url('present/export/excel')}}" type="button" class="btn btn-warning text-small-on-mobile mx-3">Export</a>
+            <div class="row">
+                <div class="col-6">
+                    <h5 class="card-title">Detail Presensi</h5>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <form action="{{ route('presteacher.destroy', $detailPresent->id) }}" method="post">
+                        @csrf
+                        @method('delete')
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-plus me-1"></i> Delete</button>
+                    </form>
+                </div>
             </div>
+            
+            
 
 
             <!-- Default Table -->
@@ -66,7 +75,7 @@
                         <td>{{$detailPresent->topic_p}}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Jumlah Murid</th>
+                        <th scope="row">Siswa Hadir</th>
                         <td>{{$detailPresent->student_p}}</td>
                     </tr>
                     <tr>
@@ -80,13 +89,19 @@
                         <td>{{$detailPresent->student_i_k_p}}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Bolos</th>
+                        <th scope="row">Alfa</th>
                         <td>{{$detailPresent->student_a_p}}</td>
                         <td>{{$detailPresent->student_a_k_p}}</td>
                     </tr>
                 </tbody>
             </table>
             <!-- End Default Table Example -->
+            
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <a href="{{ route('presteacher.index') }}" type="button" class="btn btn-danger"></i> Kembali</a>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

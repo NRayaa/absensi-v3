@@ -31,7 +31,16 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Form Buat Presensi</h5>
+            
+            
+            <div class="row">
+                <div class="col-6">
+                    <h5 class="card-title">Form Buat Presensi</h5>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <a href="{{ route('presteacher.index') }}" type="button" class="btn btn-danger"></i> Kembali</a>
+                </div>
+            </div>
 
             <!-- General Form Elements -->
             <form action="{{ route('presteacher.store') }}" method="post">
@@ -51,20 +60,20 @@
                     <label class="col-sm-2 col-form-label">Kelas : </label>
                     <div class="col-sm-10">
                         <select class="form-select" name="class_p" aria-label="Default select example">
-                            <option value="7 A">7 A</option>
-                            <option value="7 B">7 B</option>
-                            <option value="7 C">7 C</option>
-                            <option value="7 D">7 D</option>
-                            <option value="8 A">8 A</option>
-                            <option value="8 B">8 B</option>
-                            <option value="8 C">8 C</option>
-                            <option value="8 D">8 D</option>
-                            <option value="8 E">8 E</option>
-                            <option value="9 A">9 A</option>
-                            <option value="9 B">9 B</option>
-                            <option value="9 C">9 C</option>
-                            <option value="9 D">9 D</option>
-                            <option value="9 E">9 E</option>
+                            <option value="Kelas 7 A">7 A</option>
+                            <option value="Kelas 7 B">7 B</option>
+                            <option value="Kelas 7 C">7 C</option>
+                            <option value="Kelas 7 D">7 D</option>
+                            <option value="Kelas 8 A">8 A</option>
+                            <option value="Kelas 8 B">8 B</option>
+                            <option value="Kelas 8 C">8 C</option>
+                            <option value="Kelas 8 D">8 D</option>
+                            <option value="Kelas 8 E">8 E</option>
+                            <option value="Kelas 9 A">9 A</option>
+                            <option value="Kelas 9 B">9 B</option>
+                            <option value="Kelas 9 C">9 C</option>
+                            <option value="Kelas 9 D">9 D</option>
+                            <option value="Kelas 9 E">9 E</option>
                         </select>
                     </div>
                 </div>

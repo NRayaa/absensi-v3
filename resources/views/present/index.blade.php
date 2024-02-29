@@ -59,7 +59,7 @@
                 <div class="col-6 d-flex justify-content-end align-items-center">
                     <a href="{{ url('present/export/excel')}}" type="button" class="btn btn-warning text-small-on-mobile mx-3">Export</a>
                     <a href="{{ route('present.create') }}" type="button" class="btn btn-primary text-small-on-mobile"><i class="bi bi-plus me-1 text-small-on-mobile"></i> Buat Presensi</a>
-
+                    {{-- <a href="{{ route('present.search') }}" type="button" class="btn btn-success text-small-on-mobile"><i class="bi bi-plus me-1 text-small-on-mobile"></i> Import</a> --}}
                 </div>
             </div>
 

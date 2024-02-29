@@ -25,18 +25,18 @@ class ExportPresent implements FromCollection
                 'Mapel' => $item->subject_p,
                 'Topik Bahasan' => $item->topic_p,
                 'Jumlah Murid' => $item->student_p,
-                'Total Murid Sakit' => $item->student_s_p,
-                'Total Murid Izin' => $item->student_i_p,
-                'Total Murid Bolos' => $item->student_a_p,
-                'Nama Murid Sakit' => $item->student_s_k_p,
-                'Nama Murid Izin' => $item->student_i_k_p,
-                'Nama Murid Bolos' => $item->student_a_k_p
+                'Total Sakit' => $item->student_s_p,
+                'Total Izin' => $item->student_i_p,
+                'Total Alfa' => $item->student_a_p,
+                'Murid Sakit' => $item->student_s_k_p,
+                'Murid Izin' => $item->student_i_k_p,
+                'Murid Alfa' => $item->student_a_k_p
             ];
         });
 
         return collect([
             ['PRESENSI GURU'], // Baris kosong untuk pemisah
-            ['Nama Guru', 'Tanggal', 'Kehadiran', 'Kelas', 'Pertemuan', 'Mapel', 'Topik Bahasan', 'Jumlah Murid', 'Total Murid Sakit', 'Total Murid Izin', 'Total Murid Bolos', 'Kehadiran Murid Sakit', 'Kehadiran Murid Izin', 'Kehadiran Murid Bolos'], // Header untuk data kehadiran
+            ['Nama Guru', 'Tanggal', 'Kehadiran', 'Kelas', 'Pertemuan', 'Mapel', 'Topik Bahasan', 'Jumlah Murid', 'Total Sakit', 'Total Izin', 'Total Alfa', 'Murid Sakit', 'Murid Izin', 'Murid Alfa'], // Header untuk data kehadiran
         ])->concat($presentData);
     }
 }
