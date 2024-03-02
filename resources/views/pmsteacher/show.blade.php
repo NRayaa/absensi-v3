@@ -77,15 +77,7 @@
                 </tbody>
             </table>
             <!-- End Default Table Example -->
-            <div class="row">
-                <div class="col-6 d-flex align-items-center">
-                    <form action="{{ route('pmsteacher.destroy', $pmsDetail->id) }}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-danger"> Delete</button>
-                    </form>
-                </div>
-            </div>
+
         </div>
     </div>
 @endsection

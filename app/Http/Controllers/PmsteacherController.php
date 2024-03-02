@@ -89,8 +89,6 @@ class PmsteacherController extends Controller
      */
     public function destroy(string $id)
     {
-        $pms=Permission::find($id);
-        $pms->delete();
         return redirect()->route('pmsteacher.index');
     }
 }
