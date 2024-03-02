@@ -24,6 +24,14 @@
             </li><!-- End Presensi Nav -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('permission.index') }}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Izin Guru</span>
+                </a>
+            </li><!-- End Presensi Nav -->
+
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('teacher.index') }}">
                     <i class="bi bi-person-circle"></i>
                     <span>Guru</span>
@@ -103,7 +111,7 @@
                 <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Pertemuan Ke</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" name="meet_p">
+                        <input type="text" class="form-control" name="meet_p">
                     </div>
                 </div>
 

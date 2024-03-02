@@ -13,7 +13,7 @@ class ExportPresent implements FromCollection
     public function collection()
     {
         $allpresent = Present::orderBy('created_at', 'asc')
-        ->get(['teacher_p', 'attend_p', 'class_p', 'meet_p', 'date_p', 'subject_p', 'topic_p', 'student_p','student_s_p', 'student_i_p', 'student_a_p', 'student_s_k_p', 'student_i_k_p', 'student_a_k_p']);
+        ->get(['teacher_p', 'attend_p', 'class_p', 'meet_p', 'date_p', 'subject_p', 'topic_p', 'student_p','student_s_p', 'student_i_p', 'student_a_p', 'student_s_k_p', 'student_i_k_p', 'student_a_k_p', 'created_at']);
 
         $presentData = $allpresent->map(function ($item) {
             return [
@@ -30,13 +30,14 @@ class ExportPresent implements FromCollection
                 'Total Alfa' => $item->student_a_p,
                 'Murid Sakit' => $item->student_s_k_p,
                 'Murid Izin' => $item->student_i_k_p,
-                'Murid Alfa' => $item->student_a_k_p
+                'Murid Alfa' => $item->student_a_k_p,
+                'Waktu Presensi' => $item->created_at
             ];
         });
 
         return collect([
             ['PRESENSI GURU'], // Baris kosong untuk pemisah
-            ['Nama Guru', 'Tanggal', 'Kehadiran', 'Kelas', 'Pertemuan', 'Mapel', 'Topik Bahasan', 'Jumlah Murid', 'Total Sakit', 'Total Izin', 'Total Alfa', 'Murid Sakit', 'Murid Izin', 'Murid Alfa'], // Header untuk data kehadiran
+            ['Nama Guru', 'Tanggal', 'Kehadiran', 'Kelas', 'Pertemuan', 'Mapel', 'Topik Bahasan', 'Jumlah Murid', 'Total Sakit', 'Total Izin', 'Total Alfa', 'Murid Sakit', 'Murid Izin', 'Murid Alfa', 'Waktu Presensi'], // Header untuk data kehadiran
         ])->concat($presentData);
     }
 }

@@ -16,6 +16,13 @@
                 </a>
             </li><!-- End Presensi Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('pmsteacher.index') }}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Izin Guru</span>
+                </a>
+            </li><!-- End Presensi Nav -->
+
             <li class="nav-item hidden-on-desktop">
                 <a class="nav-link collapsed" href="{{ route('logout') }}">
                     <i class="bi bi-box-arrow-left"></i>
@@ -36,6 +43,7 @@
                     <h5 class="card-title">Data Presensi</h5>
                 </div>
                 <div class="col-6 d-flex justify-content-end align-items-center">
+                    <a href="{{ url('presteacher/exportasdqwezxc')}}" type="button" class="btn btn-warning text-small-on-mobile mx-3">Export</a>
                     <a href="{{ route('presteacher.create') }}" type="button" class="btn btn-primary text-small-on-mobile"><i class="text-small-on-mobile bi bi-plus me-1"></i> Buat Presensi</a>
                 </div>
             </div>

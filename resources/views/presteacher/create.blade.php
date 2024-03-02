@@ -16,6 +16,13 @@
                 </a>
             </li><!-- End Presensi Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('pmsteacher.index') }}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Izin Guru</span>
+                </a>
+            </li><!-- End Presensi Nav -->
+
             <li class="nav-item hidden-on-desktop">
                 <a class="nav-link collapsed" href="{{ route('logout') }}">
                     <i class="bi bi-box-arrow-left"></i>
@@ -31,8 +38,8 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            
-            
+
+
             <div class="row">
                 <div class="col-6">
                     <h5 class="card-title">Form Buat Presensi</h5>
@@ -81,7 +88,7 @@
                 <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Pertemuan Ke</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" name="meet_p">
+                        <input type="text" class="form-control" name="meet_p">
                     </div>
                 </div>
 

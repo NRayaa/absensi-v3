@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportPersonal;
+use App\Exports\ExportPresent;
 use App\Models\Present;
 use App\Models\Subject;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PresteacherController extends Controller
 {
@@ -162,5 +165,11 @@ class PresteacherController extends Controller
         } else {
             return redirect()->back()->with('error', 'Something went wrong!');
         }
+
+    }
+
+    public function export(){
+        $id = Auth::user()->id;
+        return Excel::download(new ExportPersonal($id), 'presteacher.xlsx');
     }
 }

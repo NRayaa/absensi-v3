@@ -16,6 +16,13 @@
                 </a>
             </li><!-- End Presensi Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('pmsteacher.index') }}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Izin Guru</span>
+                </a>
+            </li><!-- End Presensi Nav -->
+
             <li class="nav-item hidden-on-desktop">
                 <a class="nav-link collapsed" href="{{ route('logout') }}">
                     <i class="bi bi-box-arrow-left"></i>
@@ -36,15 +43,11 @@
                     <h5 class="card-title">Detail Presensi</h5>
                 </div>
                 <div class="col-6 d-flex justify-content-end align-items-center">
-                    <form action="{{ route('presteacher.destroy', $detailPresent->id) }}" method="post">
-                        @csrf
-                        @method('delete')
-                    <button type="submit" class="btn btn-danger"><i class="bi bi-plus me-1"></i> Delete</button>
-                    </form>
+                    <a href="{{ route('presteacher.index') }}" type="button" class="btn btn-danger"></i> Kembali</a>
                 </div>
             </div>
-            
-            
+
+
 
 
             <!-- Default Table -->
@@ -96,10 +99,14 @@
                 </tbody>
             </table>
             <!-- End Default Table Example -->
-            
+
             <div class="row">
                 <div class="col-6 d-flex align-items-center">
-                    <a href="{{ route('presteacher.index') }}" type="button" class="btn btn-danger"></i> Kembali</a>
+                    <form action="{{ route('presteacher.destroy', $detailPresent->id) }}" method="post">
+                        @csrf
+                        @method('delete')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>

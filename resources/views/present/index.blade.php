@@ -24,6 +24,14 @@
             </li><!-- End Presensi Nav -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('permission.index') }}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Izin Guru</span>
+                </a>
+            </li><!-- End Presensi Nav -->
+
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('teacher.index') }}">
                     <i class="bi bi-person-circle"></i>
                     <span>Guru</span>

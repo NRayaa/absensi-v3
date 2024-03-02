@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\ExportTeachpres;
+use App\Models\Permission;
 use App\Models\Present;
 use App\Models\Teacher;
 use App\Models\User;
@@ -74,12 +75,14 @@ class TeacherController extends Controller
         $role = Auth::user()->role;
         $teacherDetail = Teacher::find($id);
         $teacherName = Teacher::find($id)->name_teacher;
+        $pmsTeacher = Permission::where('teacher_pms', $teacherName)->get();
         $teacherPresent = Present::where('teacher_p', $teacherName)->get();
         $present = $teacherPresent->where('attend_p', 'Hadir')->count();
         $absent = $teacherPresent->where('attend_p', 'Tidak hadir')->count();
+        $pms = $pmsTeacher->count();
 
         // dd($teacherName);
-        return view('teacher.show', compact('teacherDetail', 'teacherName', 'teacherPresent', 'present', 'absent', 'name', 'role'));
+        return view('teacher.show', compact('teacherDetail', 'teacherName', 'teacherPresent', 'present', 'absent', 'name', 'role', 'pmsTeacher', 'pms'));
     }
 
     /**

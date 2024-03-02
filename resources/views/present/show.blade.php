@@ -24,6 +24,14 @@
             </li><!-- End Presensi Nav -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('permission.index') }}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Izin Guru</span>
+                </a>
+            </li><!-- End Presensi Nav -->
+
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('teacher.index') }}">
                     <i class="bi bi-person-circle"></i>
                     <span>Guru</span>
@@ -52,7 +60,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            
+
             <div class="row">
                 <div class="col-6">
                     <h5 class="card-title">Detail Presensi</h5>

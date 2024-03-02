@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('crumb', 'Mata Pelajaran')
+@section('crumb', 'Izin Guru')
 @section('crumb1', 'Dashboard')
 @section('name', $name)
 @section('role', $role)
@@ -24,7 +24,7 @@
             </li><!-- End Presensi Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('permission.index') }}">
+                <a class="nav-link " href="{{ route('permission.index') }}">
                     <i class="bi bi-envelope"></i>
                     <span>Izin Guru</span>
                 </a>
@@ -38,7 +38,7 @@
             </li><!-- End Guru Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('subject.index') }}">
+                <a class="nav-link collapsed" href="{{ route('subject.index') }}">
                     <i class="bi bi-people"></i>
                     <span>Mapel</span>
                 </a>
@@ -61,32 +61,17 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <h5 class="card-title">Data Mata Pelajaran</h5>
+                    <h5 class="card-title">Data Izin Guru</h5>
                 </div>
                 <div class="col-6 d-flex justify-content-end align-items-center">
-                    <a href="{{ route('subject.create') }}" type="button" class="btn btn-primary"><i class="bi bi-plus me-1"></i> Tambah</a>
+                    {{-- <a href="{{ url('present/export/excel')}}" type="button" class="btn btn-warning text-small-on-mobile mx-3">Export</a> --}}
+                    <a href="{{ route('permission.create') }}" type="button" class="btn btn-primary text-small-on-mobile"><i class="bi bi-plus me-1 text-small-on-mobile"></i> Buat Izin</a>
+                    {{-- <a href="{{ route('present.search') }}" type="button" class="btn btn-success text-small-on-mobile"><i class="bi bi-plus me-1 text-small-on-mobile"></i> Import</a> --}}
                 </div>
             </div>
 
             <!-- Table with stripped rows -->
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Mata Pelajaran</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($subjects as $subject)
-                        <tr>
-                            <th scope="row">{{$loop->iteration}}</th>
-                            <td>{{$subject->name_subject}}</td>
-                            <td><a href="{{route('subject.edit', $subject->id)}}" type="button" class="btn btn-warning">Detail</a></td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            @include('permission.table', $permissions)
             <!-- End Table with stripped rows -->
 
         </div>
